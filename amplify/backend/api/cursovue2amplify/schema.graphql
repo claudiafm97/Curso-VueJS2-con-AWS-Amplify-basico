@@ -1,0 +1,9 @@
+type Todo @model {
+  id: ID!
+  text: String!
+  done: Boolean
+}
+type PrivateNote @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  note: String!
+}
